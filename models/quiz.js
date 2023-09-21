@@ -7,11 +7,19 @@ const Quiz = sequelize.define("Quiz", {
     allowNull: false,
   },
   choices: {
-    type: DataTypes.ARRAY(DataTypes.STRING),
+    type: DataTypes.JSON,
     allowNull: false,
   },
   correctAnswer: {
     type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
     allowNull: false,
   },
 });
