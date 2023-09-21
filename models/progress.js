@@ -7,7 +7,7 @@ const Progress = sequelize.define("Progress", {
     allowNull: false,
   },
   correctAnswersCount: {
-    type: DataTypes.INTERGER,
+    type: DataTypes.INTEGER,
     defaultValue: 0,
     allowNull: false,
   },
