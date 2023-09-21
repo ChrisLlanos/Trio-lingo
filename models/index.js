@@ -6,3 +6,5 @@ User.hasMany(Progress);
 User.hasMany(Quiz);
 Quiz.belongsTo(User);
 Progress.belongsTo(User);
+
+module.exports = { User, Quiz, Progress };

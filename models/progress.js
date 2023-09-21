@@ -1,3 +1,6 @@
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+
 const Progress = sequelize.define("Progress", {
   completedAt: {
     type: DataTypes.DATE,
@@ -9,3 +12,5 @@ const Progress = sequelize.define("Progress", {
     allowNull: false,
   },
 });
+
+module.exports = Progress;
