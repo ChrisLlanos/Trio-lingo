@@ -1,3 +1,6 @@
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+
 const Quiz = sequelize.define("Quiz", {
   question: {
     type: DataTypes.STRING,
@@ -12,3 +15,5 @@ const Quiz = sequelize.define("Quiz", {
     allowNull: false,
   },
 });
+
+module.exports = Quiz;
