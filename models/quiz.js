@@ -14,6 +14,10 @@ const Quiz = sequelize.define("Quiz", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  language: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
