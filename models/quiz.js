@@ -26,6 +26,14 @@ const Quiz = sequelize.define("Quiz", {
     type: DataTypes.DATE,
     allowNull: false,
   },
+  quizId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: "User",
+      key: "id",
+    },
+  },
 });
 
 module.exports = Quiz;
