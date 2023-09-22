@@ -12,14 +12,7 @@ Progress.init(
     correctAnswersCount: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-  },
-  {
-    sequelize,
-    timestamps: true,
-    modelName: "progress",
       defaultValue: 0,
-      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -29,11 +22,17 @@ Progress.init(
         key: "id",
       },
     },
+  },
   {
     sequelize,
+    timestamps: true,
     modelName: "progress",
-    timestamps: false,
   }
 );
+
+Progress.belongsTo(sequelize.models.User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
 
 module.exports = Progress;
