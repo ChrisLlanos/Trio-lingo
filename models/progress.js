@@ -18,6 +18,21 @@ Progress.init(
     sequelize,
     timestamps: true,
     modelName: "progress",
+      defaultValue: 0,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+  {
+    sequelize,
+    modelName: "progress",
+    timestamps: false,
   }
 );
 
