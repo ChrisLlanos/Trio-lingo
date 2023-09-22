@@ -11,6 +11,13 @@ Progress.init(
     },
     correctAnswersCount: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    timestamps: true,
+    modelName: "progress",
       defaultValue: 0,
       allowNull: false,
     },
@@ -22,7 +29,6 @@ Progress.init(
         key: "id",
       },
     },
-  },
   {
     sequelize,
     modelName: "progress",
