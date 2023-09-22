@@ -30,9 +30,4 @@ Progress.init(
   }
 );
 
-Progress.belongsTo(sequelize.models.User, {
-  foreignKey: "user_id",
-  onDelete: "CASCADE",
-});
-
 module.exports = Progress;
