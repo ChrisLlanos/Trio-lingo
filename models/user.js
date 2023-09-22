@@ -60,9 +60,4 @@ User.init(
   }
 );
 
-User.belongsTo(Quiz, {
-  foreignKey: "quiz_id",
-  onDelete: "CASCADE",
-});
-
 module.exports = User;

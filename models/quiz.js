@@ -28,9 +28,4 @@ const Quiz = sequelize.define("Quiz", {
   },
 });
 
-Quiz.belongsTo(User, {
-  foreignKey: "user_id",
-  onDelete: "CASCADE",
-});
-
 module.exports = Quiz;
