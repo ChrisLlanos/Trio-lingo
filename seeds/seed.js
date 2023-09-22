@@ -1,7 +1,8 @@
 const sequelize = require("../config/connection");
-const { User, Project } = require("../models/quiz");
+const { User, Quiz } = require("../models/quiz");
 const userData = require("./userData.json");
 const quizData = require("./quizData");
+const processData = require("./progressData");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -19,9 +20,11 @@ const seedDatabase = async () => {
   }
 
   for (const process of processData) {
-    await Process.create({
-      ...process,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+    const randomUserIndex = Math.floor(Math.random() * users.length);
+    const randomUserId = users[randomUserIndex].id;
+
+    await Progress.create({
+      user_id: randomUserId,
     });
   }
 
