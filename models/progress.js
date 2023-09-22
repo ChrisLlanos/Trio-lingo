@@ -1,16 +1,33 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-const Progress = sequelize.define("Progress", {
-  completedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
+class Progress extends Model {}
+
+Progress.init(
+  {
+    completedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    correctAnswersCount: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
   },
-  correctAnswersCount: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0,
-    allowNull: false,
-  },
-});
+  {
+    sequelize,
+    modelName: "progress",
+    timestamps: false,
+  }
+);
 
 module.exports = Progress;
