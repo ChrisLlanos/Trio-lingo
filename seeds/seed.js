@@ -1,8 +1,9 @@
 const sequelize = require("../config/connection");
-const { User, Quiz } = require("../models/quiz");
+const { User, Quiz } = require("../models");
+const { Progress } = require("../models");
 const userData = require("./userData.json");
 const quizData = require("./quizData");
-const processData = require("./progressData");
+const progressData = require("./progressData");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -13,17 +14,20 @@ const seedDatabase = async () => {
   });
 
   for (const quiz of quizData) {
+    const randomUserIndex = Math.floor(Math.random() * users.length);
+    const randomUserId = users[randomUserIndex].id;
     await Quiz.create({
       ...quiz,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+      userId: randomUserId,
     });
   }
 
-  for (const process of processData) {
+  for (const progress of progressData) {
     const randomUserIndex = Math.floor(Math.random() * users.length);
     const randomUserId = users[randomUserIndex].id;
 
     await Progress.create({
+      completedAt: new Date(),
       user_id: randomUserId,
     });
   }

@@ -29,10 +29,8 @@ const Quiz = sequelize.define("Quiz", {
   quizId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: {
-      model: "User",
-      key: "id",
-    },
+    primaryKey: true,
+    autoIncrement: true,
   },
 });
 

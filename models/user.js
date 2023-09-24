@@ -11,12 +11,6 @@ class User extends Model {
 
 User.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -36,14 +30,6 @@ User.init(
         len: [6],
       },
     },
-    quiz_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: "Quiz",
-        key: "id",
-      },
-    },
   },
   {
     hooks: {
@@ -56,7 +42,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "User",
   }
 );
 
