@@ -1,0 +1,15 @@
+{{#if selectedLanguage}}
+  <div class="quiz-questions">
+    {{#each quizQuestions}}
+      <div class="quiz-question">
+        <h3>Question {{@index}}</h3>
+        <p>{{question}}</p>
+        <ul class="answer-options">
+          {{#each choices}}
+            <li><button class="answer-option">{{this}}</button></li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
