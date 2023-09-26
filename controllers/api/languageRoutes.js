@@ -1,21 +1,20 @@
 const router = require("express").Router();
-const {Quiz} = require("../../models/quiz");
-
-
+const { Quiz } = require("../../models/quiz");
 
 router.get("/", async (req, res) => {
-    res.render("languageSelection");
-    
-    // try {
-    //   const languages = await Quiz.findAll({
-    //     attributes: ["language"],
-    //     group: ["language"],
-    //   });
-    //   const languageOptions = languages.map((quiz) => quiz.language);
-    //   res.json({ languages: languageOptions });
-    // } catch (err) {
-    //   res.status(500).json(err);
-    // }
-  });
+  res.render("languageSelection");
+});
 
-  module.exports = router;
+router.get("/api/language/quiz", async (req, res) => {
+  try {
+    const language = req.params.language;
+
+    const quizData = await fetchQuizData(language);
+    res.json({ quizQuestions: quizData });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to fetch quiz questions." });
+  }
+});
+
+module.exports = router;
