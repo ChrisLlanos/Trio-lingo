@@ -1,7 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
-const routes = require("./controllers/api");
+const routes = require("./controllers");
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -9,7 +9,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" })); // Specify the default layout
+app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
 const sess = {
