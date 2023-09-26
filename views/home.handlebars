@@ -40,27 +40,6 @@
       </form>
     </div>
     {{/unless}}
-    <div class="language-cards">
-      <div class="language-card">
-        <button class="btn btn-primary">Spanish</button>
-      </div>
-      <div class="language-card">
-        <button class="btn btn-primary">Japanese</button>
-      </div>
-    </div>
-    {{#if selectedLanguage}}
-    <div class="quiz-questions">
-      <!--js to render and handle quiz questions -->
-    </div>
-    <div class="quiz-progress">
-      <!-- User's progress -->
-    </div>
-    {{/if}}
-    {{#if quizCompleted}}
-    <div class="quiz-summary">
-      <!-- Display quiz summary and previous progress results -->
-    </div>
-    {{/if}}
   </main>
   {{#if loggedIn}}
   <script src="/public/js/logout.js"></script>
