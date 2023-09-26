@@ -1,48 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trio Lingo</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
-<body>
-  <header>
-    <h1>Welcome to Trio Lingo Learning App</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
-    {{#unless loggedIn}}
-    <div class="login-card">
-      <h2 class="page-title">Login</h2>
-      <form class="form login-form">
-        <div class="form-group">
-          <label for="email-login">Email:</label>
-          <input class="form-input" type="text" id="email-login" />
-        </div>
-        <div class="form-group">
-          <label for="password-login">Password:</label>
-          <input class="form-input" type="password" id="password-login" />
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary" type="submit">Login</button>
-        </div>
-      </form>
+{{#unless loggedIn}}
+<div class="login-card">
+  <h2 class="page-title">Login</h2>
+  <form class="form login-form">
+    <div class="form-group">
+      <label for="email-login">Email:</label>
+      <input class="form-input" type="text" id="email-login" />
     </div>
-    {{/unless}}
-  </main>
-  {{#if loggedIn}}
-  <script src="/public/js/logout.js"></script>
-  {{/if}}
-</body>
-</html>
+    <div class="form-group">
+      <label for="password-login">Password:</label>
+      <input class="form-input" type="password" id="password-login" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+  </form>
+</div>
+{{/unless}}
+{{#if loggedIn}}
+<script src="/public/js/logout.js"></script>
+{{/if}}
+
