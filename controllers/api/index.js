@@ -3,6 +3,6 @@ const userRoutes = require("./userRoutes");
 const quizRoutes = require("./quizRoutes");
 
 router.use("/users", userRoutes);
-router.use("/projects", quizRoutes);
+router.use("/progress", quizRoutes);
 
 module.exports = router;
