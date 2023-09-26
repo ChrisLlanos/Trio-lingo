@@ -3,7 +3,7 @@ const {Quiz} = require("../../models/quiz");
 
 
 
-router.get("/language", async (req, res) => {
+router.get("/", async (req, res) => {
     res.render("languageSelection");
     
     // try {
