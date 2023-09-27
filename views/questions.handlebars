@@ -1,14 +1,16 @@
-<div id="quiz-container">
-  {{#each quizData}}
-  <div class="quiz-question">
-    <h3>{{ this.question }}</h3>
-    <ul class="answer-options">
-      {{#each this.choices}}
-      <li>
-        {{ this }}
-      </li>
-      {{/each}}
-    </ul>
+{{#if selectedLanguage}}
+  <div class="quiz-questions">
+    {{#each quizQuestions}}
+      <div class="quiz-question">
+        <h3>Question {{@index}}</h3>
+        <p>{{question}}</p>
+        <ul class="answer-options">
+          {{#each choices}}
+            <li><button class="answer-option">{{this}}</button></li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
+{{/if}}
+<script src="/public/js/quizQuestions.js"></script>
