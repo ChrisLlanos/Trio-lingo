@@ -1,12 +1,13 @@
 // Spanish and Japanese quiz questions
+const spanishButton = document.getElementById("spanish-button");
+const japaneseButton = document.getElementById("japanese-button");
+const quizContainer = document.getElementById("spanish-quiz-container");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const spanishButton = document.getElementById("spanish-button");
-  const japaneseButton = document.getElementById("japanese-button");
-  const quizContainer = document.getElementById("quiz-container");
+console.log(quizContainer);
 
+window.addEventListener("load", function () {
   function fetchAndGenerateQuiz(language) {
-    fetch("/json")
+    fetch("api/quiz/json")
       .then((response) => response.json())
       .then((quizData) => {
         generateQuiz(quizData, language);
@@ -16,11 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
   spanishButton.addEventListener("click", function () {
-    generateQuiz(quizData, "Spanish");
+    console.log("quiz");
+    generateQuiz("Spanish");
   });
 
   japaneseButton.addEventListener("click", function () {
-    generateQuiz(quizData, "Japanese");
+    generateQuiz("Japanese");
   });
 
   function generateQuiz(quizData, language) {
@@ -64,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     quizContainer.appendChild(submitButton);
   }
-
   function evaluateAnswers(filteredQuizData) {
     let correctAnswers = 0;
 
