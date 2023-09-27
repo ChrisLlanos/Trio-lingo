@@ -1,8 +1,8 @@
-const router = require("express").Router();
-const { Quiz } = require("../../models/quiz");
+// const router = require("express").Router();
+// const { Quiz } = require("../../models/quiz");
 
-router.get("/", async (req, res) => {
-  res.render("languageSelection");
-});
+// router.get("/", async (req, res) => {
+//   res.render("languageSelection");
+// });
 
-module.exports = router;
+// module.exports = router;

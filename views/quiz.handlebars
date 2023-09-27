@@ -1,0 +1,34 @@
+<script src="/public/js/languageSelection.js"></script>
+{{#if selectedLanguage}}
+    {{#if (eq selectedLanguage "Spanish")}}
+        <div id="quiz-container">
+            {{#each spanishQuiz}}
+                <div class="question">
+                    <p>{{this.question}}</p>
+                </div>
+                <div class="choices">
+                    {{#each this.choices}}
+                        <input type="radio" name="choice" value="{{@index}}"> {{this}}<br>
+                    {{/each}}
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div id="quiz-container">
+            {{#each japaneseQuiz}}
+                <div class="question">
+                    <p>{{this.question}}</p>
+                </div>
+                <div class="choices">
+                    {{#each this.choices}}
+                        <input type="radio" name="choice" value="{{@index}}"> {{this}}<br>
+                    {{/each}}
+                </div>
+            {{/each}}
+        </div>
+    {{/if}}
+    <button id="next-button">Next</button>
+{{else}}
+    <p>Please select a language.</p>
+{{/if}}
+
