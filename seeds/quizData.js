@@ -60,6 +60,18 @@ const quizData = [
   },
 
   {
+    question: "What is apple in Japanese?",
+    choices: [
+      "あお ao",
+      "りんご ringo",
+      "ねこ neko",
+      "なし nashi",
+    ],
+    correctAnswer: 1, // array index of the right answer
+    language: "Japanese",
+  },
+  
+  {
     question: "How would you say “Hello” in Japanese?",
     choices: [
       "こんにちは konnichiwa",
@@ -78,7 +90,6 @@ const quizData = [
       "スプーン supuun",
       "パン pan",
       "はし hashi"
-
     ],
     correctAnswer: 2, // array index of the right answer
     language: "Japanese",
