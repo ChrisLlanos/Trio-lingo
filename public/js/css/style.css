@@ -73,6 +73,6 @@ margin:14px 320px;
 border-radius: 4px;
 }
 button#back-home {
-    background-color: pink;
-    color:pink;
+    background-color: rgb(45, 61, 116);
+    color:wheat;
 }
