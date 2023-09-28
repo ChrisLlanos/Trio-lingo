@@ -7,7 +7,9 @@ const progressData = require("../seeds/progressData");
 
 router.get("/", async (req, res) => {
   try {
-    res.render("home");
+    res.render("home", {
+    style: "style.css",
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send("Server Error");
@@ -16,7 +18,9 @@ router.get("/", async (req, res) => {
 
 router.get("/login", async (req,res)=>{
   try{
-    res.render("languageSelection");
+    res.render("languageSelection", {
+    style: "style.css",
+  });
   }catch (error){
     console.error(error);
     res.status(500).send("error logging in");
