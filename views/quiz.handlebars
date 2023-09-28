@@ -17,9 +17,10 @@
                 </div>
             {{/each}}
         </div>
-    <div class="summary">
-                <p>Your score: {{correctAnswers}} out of {{totalQuestions}}</p>
-            </div>
-            <a id="returnHome" href="/">Return Home</a>
-</div>
-<script src="/js/languageSelection.js"></script>
+    <div id="summary-container">
+        <script type="text/x-handlebars-template" id="summary-template">
+        <p>Your score: {{correctAnswers}} out of {{totalQuestions}}</p>
+        </script>
+        </div>
+        <button id="back-home">Back to Home</button>
+        <script src="/js/languageSelection.js"></script>
