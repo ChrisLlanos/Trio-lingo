@@ -60,41 +60,43 @@ window.addEventListener("load", function () {
       quizContainer.appendChild(questionDiv);
       quizContainer.appendChild(choicesDiv);
     });
-    let userScore = 0;
+
     //submit
+
     const submitButton = document.createElement("button");
     submitButton.textContent = "Submit";
     submitButton.addEventListener("click", function () {
       evaluateAnswers(filteredQuizData);
     });
     quizContainer.appendChild(submitButton);
-  }
-  function evaluateAnswers(filteredQuizData) {
-    let correctAnswers = 0;
 
-    filteredQuizData.forEach(function (questionData, index) {
-      const selectedAnswerIndex = getSelectedAnswerIndex(`q${index}`);
-      const correctAnswerIndex = questionData.correctAnswer;
+    function evaluateAnswers(filteredQuizData) {
+      let correctAnswers = 0;
 
-      if (selectedAnswerIndex === correctAnswerIndex) {
-        correctAnswers++;
-      }
-    });
+      filteredQuizData.forEach(function (questionData, index) {
+        const selectedAnswerIndex = getSelectedAnswerIndex(`q${index}`);
+        const correctAnswerIndex = questionData.correctAnswer;
 
-    userScore = correctAnswers;
+        if (selectedAnswerIndex === correctAnswerIndex) {
+          correctAnswers++;
+        }
+      });
 
-    const quizSummary = document.querySelector(".quiz-summary");
-    quizSummary.innerHTML = `<p>Your score: ${correctAnswers} out of ${filteredQuizData.length}</p>`;
-    quizSummary.style.display = "block";
-  }
+      const totalQuestions = filteredQuizData.length;
 
-  function getSelectedAnswerIndex(name) {
-    const selectedAnswer = document.querySelector(
-      `input[name="${name}"]:checked`
-    );
-    if (selectedAnswer) {
-      return parseInt(selectedAnswer.value);
+      renderSummary(correctAnswers, totalQuestions);
     }
-    return -1;
+
+    function renderSummary(correctAnswers, totalQuestions) {
+      const source = document.getElementById("summary-template").innerHTML;
+      const template = Handlebars.compile(source);
+      const context = { correctAnswers, totalQuestions };
+      const summaryHtml = template(context);
+
+      const summaryContainer = document.getElementById("summary-container");
+      summaryContainer.innerHTML = summaryHtml;
+
+      submitButton.style.display = "none";
+    }
   }
 });
