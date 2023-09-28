@@ -9,6 +9,7 @@ router.get("/json", async (req, res) => {
 
 router.get("/", async (req, res) => {
   res.render("language");
+  
 });
 
 router.get("/quiz", async (req, res) => {
