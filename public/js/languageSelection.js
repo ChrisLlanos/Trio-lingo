@@ -68,7 +68,31 @@ window.addEventListener("load", function () {
     submitButton.addEventListener("click", function () {
       evaluateAnswers(filteredQuizData);
     });
+
     quizContainer.appendChild(submitButton);
+
+    function getSelectedAnswerIndex(questionName) {
+      const selectedAnswer = document.querySelector(
+        `input[name="${questionName}"]:checked`
+      );
+      if (selectedAnswer) {
+        return parseInt(selectedAnswer.value, 10);
+      }
+      return -1;
+    }
+
+    function renderSummary(correctAnswers, totalQuestions) {
+      const source = document.getElementById("summary-template").innerHTML;
+      const template = Handlebars.compile(source);
+      const context = { correctAnswers, totalQuestions };
+      console.log(context);
+      const summaryHtml = template(context);
+
+      const summaryContainer = document.getElementById("summary-container");
+      summaryContainer.innerHTML = summaryHtml;
+
+      submitButton.style.display = "none";
+    }
 
     function evaluateAnswers(filteredQuizData) {
       let correctAnswers = 0;
@@ -83,20 +107,8 @@ window.addEventListener("load", function () {
       });
 
       const totalQuestions = filteredQuizData.length;
-
+      console.log(submitButton);
       renderSummary(correctAnswers, totalQuestions);
-    }
-
-    function renderSummary(correctAnswers, totalQuestions) {
-      const source = document.getElementById("summary-template").innerHTML;
-      const template = Handlebars.compile(source);
-      const context = { correctAnswers, totalQuestions };
-      const summaryHtml = template(context);
-
-      const summaryContainer = document.getElementById("summary-container");
-      summaryContainer.innerHTML = summaryHtml;
-
-      submitButton.style.display = "none";
     }
   }
 });
