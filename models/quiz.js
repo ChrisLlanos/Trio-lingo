@@ -18,20 +18,18 @@ const Quiz = sequelize.define("Quiz", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
   quizId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
   },
-});
+}, 
+{sequelize,
+timestamps: false,
+freezeTableName: true,
+underscored: true,
+modelName: "Quiz",}
+);
 
 module.exports = Quiz;
