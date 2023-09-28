@@ -25,8 +25,10 @@ Progress.init(
   },
   {
     sequelize,
-    timestamps: true,
-    modelName: "progress",
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "Progress",
   }
 );
 

@@ -21,11 +21,11 @@ window.addEventListener("load", function () {
 
   spanishButton.addEventListener("click", function () {
     console.log("quiz");
-    generateQuiz("Spanish");
+    fetchAndGenerateQuiz("Spanish");
   });
 
   japaneseButton.addEventListener("click", function () {
-    generateQuiz("Japanese");
+    fetchAndGenerateQuiz("Japanese");
   });
 
   function generateQuiz(quizData, language) {
