@@ -110,5 +110,10 @@ window.addEventListener("load", function () {
       console.log(submitButton);
       renderSummary(correctAnswers, totalQuestions);
     }
+
+    const backButton = document.getElementById("back-home");
+    backButton.addEventListener("click", function () {
+      window.location.href = "http://localhost:3001/";
+    });
   }
 });
