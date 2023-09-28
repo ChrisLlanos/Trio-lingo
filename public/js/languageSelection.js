@@ -113,7 +113,8 @@ window.addEventListener("load", function () {
 
     const backButton = document.getElementById("back-home");
     backButton.addEventListener("click", function () {
-      window.location.href = "http://localhost:3001/";
+      window.location.href =
+        "http://https://blooming-fortress-00395-68dbce430e30.herokuapp.com/";
     });
   }
 });
