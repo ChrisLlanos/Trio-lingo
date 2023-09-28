@@ -14,4 +14,13 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/login", async (req,res)=>{
+  try{
+    res.render("languageSelection");
+  }catch (error){
+    console.error(error);
+    res.status(500).send("error logging in");
+  }
+});
+
 module.exports = router;
