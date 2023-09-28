@@ -20,11 +20,11 @@ The joint developed Web application **Triolingo** was created to provide languag
 
 Usage Image:
 
-![home-page](image path goes here)
+![questions-page](./public/js/Triolingo.png)
 
 
 
-To Use this application, you can visit the deployed application at: https://triolingo.herokuapp.com/. You will be greeted to the login/home page where you can create a new login or login with an existing account. Once logged in, you will be taken to the language dashboard. There, you can select a language to test your knowledge. Each quiz will appear as multiple choice. Once you have completed the quiz, you will be taken to the results page where you can see your score and the correct answers. You then have the option to take another quiz or logout.
+To Use this application, you can visit the deployed application at: https://blooming-fortress-00395-68dbce430e30.herokuapp.com/. You will be greeted to the login/home page where you can create a new login or login with an existing account. Once logged in, you will be taken to the language dashboard. There, you can select a language to test your knowledge. Each quiz will appear as multiple choice. Once you have completed the quiz, you will be taken to the results page where you can see your score and the correct answers. You then have the option to take another quiz or logout.
 
 ## Credits
 
