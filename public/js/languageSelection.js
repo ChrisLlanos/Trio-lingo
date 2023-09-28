@@ -86,10 +86,10 @@ window.addEventListener("load", function () {
       const template = Handlebars.compile(source);
       const context = { correctAnswers, totalQuestions };
       console.log(context);
-      const summaryHtml = template(context);
 
       const summaryContainer = document.getElementById("summary-container");
-      summaryContainer.innerHTML = summaryHtml;
+      const summaryHTML = `<p>Your score: ${correctAnswers} out of ${totalQuestions}</p>`;
+      summaryContainer.innerHTML = summaryHTML;
 
       submitButton.style.display = "none";
     }
