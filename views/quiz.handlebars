@@ -6,9 +6,9 @@
     <button class="btn btn-primary" id="japanese-button">Japanese</button>
 </div>
 
-{{#if selectedLanguage}}
-    {{#if (eq selectedLanguage "Spanish")}}
-        <div id="spanish-quiz-container">
+{{!-- {{#if selectedLanguage}} --}}
+    {{!-- {{#if (eq selectedLanguage "Spanish")}} --}}
+        <div id="quiz-container">
             {{#each spanishQuiz}}
                 <div class="question">
                     <p>{{this.question}}</p>
@@ -20,8 +20,8 @@
                 </div>
             {{/each}}
         </div>
-    {{else}}
-        <div id="japanese-quiz-container">
+    {{!-- {{else}}
+        <div>
             {{#each japaneseQuiz}}
                 <div class="question">
                     <p>{{this.question}}</p>
@@ -32,11 +32,11 @@
                     {{/each}}
                 </div>
             {{/each}}
-        </div>
-    {{/if}}
+        </div> --}}
+    {{!-- {{/if}} --}}
     <button id="next-button">Next</button>
-{{else}}
+{{!-- {{else}} --}}
     <p>Please select a language.</p>
-{{/if}}
+{{!-- {{/if}} --}}
 </div>
 <script src="/js/languageSelection.js"></script>
