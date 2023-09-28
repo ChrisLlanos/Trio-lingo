@@ -21,4 +21,7 @@ router.get("/quiz", async (req, res) => {
   });
 });
 
+router.get("/summary", async (req, res) => {
+  res.render("summary");
+});
 module.exports = router;
