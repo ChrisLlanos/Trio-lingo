@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/api/language");
     } else {
       alert("Failed to log in.");
     }
@@ -48,3 +48,8 @@ document
 document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
+
+  // const loginButton = document.getElementById("logIn-button");
+  // loginButton.addEventListener("click", function () {
+  //   fetch
+  // });

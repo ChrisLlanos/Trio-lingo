@@ -3,15 +3,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
-
 - [Description](#description)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+
 
 ## Description
 
@@ -21,13 +20,18 @@ The joint developed Web application **Triolingo** was created to provide languag
 
 -- Input Installation steps here --
 
+
 ## Usage
 
 Usage Image:
 
-![Alt text goes here](image path goes here)
+![home-page](image path goes here)
+![dashboard](image path goes here)
+![quiz](image path goes here)
+![results](image path goes here)
 
--- Input instructions and examples for use --
+
+to Use this application, you can visit the deployed application at: https://triolingo.herokuapp.com/. You will be greeted to the login/home page where you can create a new login or login with an existing account. Once logged in, you will be taken to the langaue dashboard. There you can select a language to test your knowledge on. Each quiz will appear as multiple choice. Once you have completed the quiz, you will be taken to the results page where you can see your score and the correct answers. You can then select to take another quiz or logout.
 
 ## Credits
 
