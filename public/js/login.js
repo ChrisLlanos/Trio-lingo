@@ -1,3 +1,4 @@
+//form that handles login
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -18,7 +19,7 @@ const loginFormHandler = async (event) => {
     }
   }
 };
-
+//sign up form handler
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -41,7 +42,7 @@ const signupFormHandler = async (event) => {
     }
   }
 };
-
+//event listeners for login and sign up form
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
@@ -50,7 +51,7 @@ document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
 
-  // const loginButton = document.getElementById("logIn-button");
-  // loginButton.addEventListener("click", function () {
-  //   fetch
-  // });
+// const loginButton = document.getElementById("logIn-button");
+// loginButton.addEventListener("click", function () {
+//   fetch
+// });

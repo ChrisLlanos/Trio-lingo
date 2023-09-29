@@ -1,12 +1,13 @@
-// Spanish and Japanese quiz questions
+// Spanish and Japanese buttons
 const spanishButton = document.getElementById("spanish-button");
 const japaneseButton = document.getElementById("japanese-button");
 const quizContainer = document.querySelector("#quiz-container");
 const quizContTwo = document.getElementById("aaa");
 console.log(spanishButton);
 console.log(quizContainer);
-
+//event listener to load when the user selects language button and begins to generate the quiz
 window.addEventListener("load", function () {
+  //fetch to api for quizdata
   function fetchAndGenerateQuiz(language) {
     fetch("/api/quiz/json")
       .then((response) => response.json())
@@ -18,7 +19,7 @@ window.addEventListener("load", function () {
       });
   }
   fetchAndGenerateQuiz();
-
+  //event listeners for spanish and japanese
   spanishButton.addEventListener("click", function () {
     console.log("quiz");
     fetchAndGenerateQuiz("Spanish");
@@ -27,7 +28,7 @@ window.addEventListener("load", function () {
   japaneseButton.addEventListener("click", function () {
     fetchAndGenerateQuiz("Japanese");
   });
-
+  //function that displays the actual quiz
   function generateQuiz(quizData, language) {
     quizContainer.innerHTML = "";
     console.log(quizData);
@@ -61,16 +62,16 @@ window.addEventListener("load", function () {
       quizContainer.appendChild(choicesDiv);
     });
 
-    //submit
+    //submit button event listener
 
     const submitButton = document.createElement("button");
     submitButton.textContent = "Submit";
     submitButton.addEventListener("click", function () {
       evaluateAnswers(filteredQuizData);
     });
-
+    //creates the submit button
     quizContainer.appendChild(submitButton);
-
+    // function that tracks the selected answers the user made
     function getSelectedAnswerIndex(questionName) {
       const selectedAnswer = document.querySelector(
         `input[name="${questionName}"]:checked`
@@ -80,7 +81,7 @@ window.addEventListener("load", function () {
       }
       return -1;
     }
-
+    //function that displays the actual count of correct answers the user had
     function renderSummary(correctAnswers, totalQuestions) {
       const source = document.getElementById("summary-template").innerHTML;
       const template = Handlebars.compile(source);
@@ -93,7 +94,7 @@ window.addEventListener("load", function () {
 
       submitButton.style.display = "none";
     }
-
+    //function that evaluates if the answers the user picked were correct
     function evaluateAnswers(filteredQuizData) {
       let correctAnswers = 0;
 
@@ -110,7 +111,7 @@ window.addEventListener("load", function () {
       console.log(submitButton);
       renderSummary(correctAnswers, totalQuestions);
     }
-
+    //back home button after quiz is completed and has been submited
     const backButton = document.getElementById("back-home");
     if (backButton) {
       backButton.addEventListener("click", function () {
