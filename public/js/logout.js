@@ -1,3 +1,4 @@
+//utilize the post route to be able to logout when the uses click the logout selector
 const logout = async () => {
   const response = await fetch("/api/users/logout", {
     method: "POST",
